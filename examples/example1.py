@@ -1,8 +1,16 @@
+import sys
+import os
+
+# Add the project root to sys.path
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
 import matplotlib.pyplot as plt
 import numpy as np
 from anysection.materials import Concrete_NonlinearEC2, Steel_Bilinear
-from anysection.sections import Section
+from anysection.sections.section import Section
 from anysection.solvers import SectionSolver
+
+
 
 # Define Materials
 concrete = Concrete_NonlinearEC2(fcm=20e6, ec1=0.002, ecu1=0.0035)

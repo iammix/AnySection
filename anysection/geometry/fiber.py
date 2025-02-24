@@ -1,4 +1,3 @@
-
 class Fiber:
     """
     Represents a fiber in a section, with area and material properties.
@@ -21,6 +20,12 @@ class Fiber:
         Calculate force in the fiber as stress * area.
         """
         return self.stress(strain) * self.area
+
+    def centroid(self):
+        """
+        Return the centroid of the fiber.
+        """
+        return self.x, self.y
 
     def __str__(self):
         return f"Fiber at ({self.x}, {self.y}) with area {self.area} and material {self.material.name}"

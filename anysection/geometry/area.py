@@ -41,9 +41,10 @@ class Rectangle(Area):
         super().__init__("Rectangle", centroid_x, centroid_y)
         self.width = width
         self.height = height
+        self._area()
 
-    def area(self):
-        return self.width * self.height
+    def _area(self):
+        self.area = self.width * self.height
 
     def moment_of_inertia(self):
         Ix = (self.width * self.height ** 3) / 12
@@ -108,7 +109,7 @@ class CompositeArea(Area):
         self.components.append((area, dx, dy))
 
     def area(self):
-        return sum([comp.area() for comp, _, _ in self.components])
+        return sum([comp.area for comp, _, _ in self.components])
 
     def centroid(self):
         Ax_sum = 0
@@ -116,7 +117,7 @@ class CompositeArea(Area):
         A_total = self.area()
 
         for comp, dx, dy in self.components:
-            A = comp.area()
+            A = comp.area
             cx, cy = comp.centroid()
             Ax_sum += A * (cx + dx)
             Ay_sum += A * (cy + dy)
@@ -129,7 +130,7 @@ class CompositeArea(Area):
         cx_total, cy_total = self.centroid()
 
         for comp, dx, dy in self.components:
-            A = comp.area()
+            A = comp.area
             cx, cy = comp.centroid()
             dx_total = cx + dx - cx_total
             dy_total = cy + dy - cy_total

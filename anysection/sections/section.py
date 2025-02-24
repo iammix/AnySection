@@ -1,6 +1,5 @@
-from geometry.area import CompositeArea
-from geometry.fiber import Fiber
-
+from anysection.geometry.area import CompositeArea
+from anysection.geometry.fiber import Fiber
 class Section:
     """
     Class representing a structural section composed of fibers.
@@ -8,7 +7,7 @@ class Section:
 
     def __init__(self, name):
         self.name = name
-        self.fibers = []  # List of Fiber objects
+        self.fibers = []  # List to store fiber objects
         self.composite_area = CompositeArea()
 
     def add_fiber(self, area, x, y, material):
@@ -19,17 +18,30 @@ class Section:
             area (float): Area of the fiber.
             x (float): X-coordinate of the fiber centroid.
             y (float): Y-coordinate of the fiber centroid.
-            material (Material): Material object for the fiber.
+            material (Material): Material object (Concrete, Steel, etc.)
         """
+        from anysection.geometry.fiber import Fiber
+
         fiber = Fiber(area, x, y, material)
         self.fibers.append(fiber)
-        self.composite_area.add_area(fiber, dx=x, dy=y)
+        self.composite_area.add_area(fiber, dx=0, dy=0)
+
+    def add_area(self, area_obj, dx=0, dy=0):
+        """
+        Add an area object (CompositeArea, Rectangle, Circle, etc.) to the section.
+
+        Parameters:
+            area_obj (Area): An area object that has an `area()` and `centroid()` method.
+            dx (float): Shift in x-direction.
+            dy (float): Shift in y-direction.
+        """
+        self.composite_area.add_area(area_obj, dx=dx, dy=dy)
 
     def total_area(self):
         """
-        Calculate total area of the section.
+        Calculate the total area of the section.
         """
-        return sum(fiber.area for fiber in self.fibers)
+        return self.composite_area.area()
 
     def centroid(self):
         """
@@ -43,41 +55,5 @@ class Section:
         """
         return self.composite_area.moment_of_inertia()
 
-    def axial_force(self, strain_distribution):
-        """
-        Calculate the total axial force for a given strain distribution.
-
-        Parameters:
-            strain_distribution (function): A function that takes (x, y) and returns strain.
-
-        Returns:
-            float: Total axial force.
-        """
-        total_force = 0.0
-        for fiber in self.fibers:
-            strain = strain_distribution(fiber.x, fiber.y)
-            total_force += fiber.force(strain)
-        return total_force
-
-    def bending_moment(self, strain_distribution):
-        """
-        Calculate the total bending moment for a given strain distribution.
-
-        Parameters:
-            strain_distribution (function): A function that takes (x, y) and returns strain.
-
-        Returns:
-            float: Total bending moment.
-        """
-        total_moment = 0.0
-        cx, cy = self.centroid()
-        for fiber in self.fibers:
-            strain = strain_distribution(fiber.x, fiber.y)
-            force = fiber.force(strain)
-            moment = force * ((fiber.x - cx) ** 2 + (fiber.y - cy) ** 2) ** 0.5
-            total_moment += moment
-        return total_moment
-
     def __str__(self):
         return f"Section: {self.name}, Total Area: {self.total_area()}"
-
