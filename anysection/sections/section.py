@@ -20,8 +20,6 @@ class Section:
             y (float): Y-coordinate of the fiber centroid.
             material (Material): Material object (Concrete, Steel, etc.)
         """
-        from anysection.geometry.fiber import Fiber
-
         fiber = Fiber(area, x, y, material)
         self.fibers.append(fiber)
         self.composite_area.add_area(fiber, dx=0, dy=0)

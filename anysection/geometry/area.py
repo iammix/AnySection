@@ -1,31 +1,23 @@
 from math import pi
+from anysection.geometry.fiber import Fiber
+
 
 class Area:
     """
     Base class representing a geometric area.
     """
-
     def __init__(self, name, centroid_x=0.0, centroid_y=0.0):
         self.name = name
         self.centroid_x = centroid_x
         self.centroid_y = centroid_y
 
     def area(self):
-        """
-        Calculate the area. To be implemented by subclasses.
-        """
         raise NotImplementedError("This method should be implemented by subclasses.")
 
     def centroid(self):
-        """
-        Return the centroid coordinates.
-        """
         return self.centroid_x, self.centroid_y
 
     def moment_of_inertia(self):
-        """
-        Calculate the moment of inertia. To be implemented by subclasses.
-        """
         raise NotImplementedError("This method should be implemented by subclasses.")
 
     def __str__(self):
@@ -33,18 +25,13 @@ class Area:
 
 
 class Rectangle(Area):
-    """
-    Rectangle geometric area.
-    """
-
     def __init__(self, width, height, centroid_x=0.0, centroid_y=0.0):
         super().__init__("Rectangle", centroid_x, centroid_y)
         self.width = width
         self.height = height
-        self._area()
 
-    def _area(self):
-        self.area = self.width * self.height
+    def area(self):
+        return self.width * self.height
 
     def moment_of_inertia(self):
         Ix = (self.width * self.height ** 3) / 12
@@ -53,10 +40,6 @@ class Rectangle(Area):
 
 
 class Circle(Area):
-    """
-    Circle geometric area.
-    """
-
     def __init__(self, radius, centroid_x=0.0, centroid_y=0.0):
         super().__init__("Circle", centroid_x, centroid_y)
         self.radius = radius
@@ -70,10 +53,6 @@ class Circle(Area):
 
 
 class Triangle(Area):
-    """
-    Triangle geometric area.
-    """
-
     def __init__(self, base, height, centroid_x=0.0, centroid_y=0.0):
         super().__init__("Triangle", centroid_x, centroid_y)
         self.base = base
@@ -89,27 +68,21 @@ class Triangle(Area):
 
 
 class CompositeArea(Area):
-    """
-    Composite area formed by combining basic geometric shapes.
-    """
-
     def __init__(self):
         super().__init__("Composite")
         self.components = []
 
     def add_area(self, area, dx=0, dy=0):
-        """
-        Add a new area component.
-
-        Parameters:
-            area (Area): The area object to add.
-            dx (float): Shift in x-direction.
-            dy (float): Shift in y-direction.
-        """
         self.components.append((area, dx, dy))
 
     def area(self):
-        return sum([comp.area for comp, _, _ in self.components])
+        _sum = 0
+        for component in self.components:
+            if isinstance(component[0], Fiber):
+                _sum += component[0].area
+            else:
+                _sum += component[0].area()
+        return _sum
 
     def centroid(self):
         Ax_sum = 0
@@ -117,7 +90,10 @@ class CompositeArea(Area):
         A_total = self.area()
 
         for comp, dx, dy in self.components:
-            A = comp.area
+            if isinstance(comp, Fiber):
+                A = comp.area
+            else:
+                A = comp.area()
             cx, cy = comp.centroid()
             Ax_sum += A * (cx + dx)
             Ay_sum += A * (cy + dy)
@@ -130,16 +106,43 @@ class CompositeArea(Area):
         cx_total, cy_total = self.centroid()
 
         for comp, dx, dy in self.components:
-            A = comp.area
+            A = comp.area()
             cx, cy = comp.centroid()
             dx_total = cx + dx - cx_total
             dy_total = cy + dy - cy_total
 
             Ix, Iy = comp.moment_of_inertia()
 
-            # Apply parallel axis theorem
             Ix_total += Ix + A * dy_total ** 2
             Iy_total += Iy + A * dx_total ** 2
 
         return Ix_total, Iy_total
 
+
+class Tee(CompositeArea):
+    """
+    T-section composed of a flange and web.
+
+    Parameters:
+        bf: Flange width
+        hf: Flange height
+        bw: Web width
+        hw: Web height
+    """
+    def __init__(self, bf, hf, bw, hw):
+        super().__init__()
+        self.bf = bf
+        self.hf = hf
+        self.bw = bw
+        self.hw = hw
+
+        # Flange at the top
+        flange = Rectangle(width=bf, height=hf)
+        flange_centroid_y = hf / 2 + hw  # from bottom
+        self.add_area(flange, dx=0, dy=hw)
+
+        # Web at the bottom
+        web = Rectangle(width=bw, height=hw)
+        web_centroid_x = (bf - bw) / 2  # center the web
+        web_centroid_y = hw / 2
+        self.add_area(web, dx=web_centroid_x, dy=0)

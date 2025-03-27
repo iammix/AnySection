@@ -63,12 +63,13 @@ class SectionSolver:
 
         return total_moment
 
-    def moment_curvature_analysis(self, curvature_range):
+    def moment_curvature_analysis(self, curvature_range, axial_force=0.0):
         """
-        Perform a moment-curvature analysis over a range of curvatures.
+        Perform moment-curvature analysis for a specified axial force.
 
         Parameters:
             curvature_range (iterable): List or array of curvature values.
+            axial_force (float): Applied axial force (positive = compression).
 
         Returns:
             list: List of (curvature, moment) tuples.
@@ -76,43 +77,69 @@ class SectionSolver:
         results = []
 
         for curvature in curvature_range:
-            moment = self.calculate_moment_capacity(curvature)
-            results.append((curvature, moment))
+            try:
+                neutral_axis = self.find_neutral_axis(axial_force, curvature)
+                moment = self.calculate_moment_capacity(curvature, neutral_axis)
+                results.append((curvature, moment))
+            except Exception as e:
+                print(f"⚠️ Curvature {curvature:.5f} failed: {e}")
+                results.append((curvature, None))
 
         return results
 
-    def find_neutral_axis(self, target_axial_force, curvature, tolerance=1e-6, max_iter=100):
+    def calculate_moment_capacity(self, curvature, neutral_axis):
         """
-        Find the position of the neutral axis that results in a target axial force.
+        Calculate bending moment for a given curvature and neutral axis.
 
         Parameters:
-            target_axial_force (float): The desired axial force.
-            curvature (float): Applied curvature.
-            tolerance (float): Convergence tolerance.
-            max_iter (int): Maximum number of iterations.
+            curvature (float): Section curvature.
+            neutral_axis (float): Position of the neutral axis.
 
         Returns:
-            float: Neutral axis depth.
+            float: Resulting moment.
         """
-        lower_bound = -self.section.height
-        upper_bound = self.section.height
-        iteration = 0
+        total_moment = 0.0
 
-        while iteration < max_iter:
-            mid = (lower_bound + upper_bound) / 2
-            axial_force = self.calculate_axial_force(mid, curvature)
+        for fiber in self.section.fibers:
+            strain = curvature * (fiber.y - neutral_axis)
+            stress = fiber.material.stress(strain)
+            force = stress * fiber.area
+            lever_arm = fiber.y - neutral_axis
+            total_moment += force * lever_arm
 
-            if abs(axial_force - target_axial_force) < tolerance:
+        return total_moment
+
+    def find_neutral_axis(self, target_axial_force, curvature, tolerance=1e-6, max_iter=100):
+        """
+        Find the neutral axis depth that satisfies the target axial force.
+
+        Parameters:
+            target_axial_force (float): Applied axial force.
+            curvature (float): Section curvature.
+            tolerance (float): Convergence tolerance.
+            max_iter (int): Max iterations.
+
+        Returns:
+            float: Neutral axis position.
+        """
+        y_min = min(fiber.y for fiber in self.section.fibers)
+        y_max = max(fiber.y for fiber in self.section.fibers)
+
+        low = y_min
+        high = y_max
+
+        for _ in range(max_iter):
+            mid = (low + high) / 2
+            axial = self.calculate_axial_force(mid, curvature)
+
+            if abs(axial - target_axial_force) < tolerance:
                 return mid
-
-            if axial_force < target_axial_force:
-                lower_bound = mid
+            elif axial > target_axial_force:
+                low = mid
             else:
-                upper_bound = mid
+                high = mid
 
-            iteration += 1
-
-        raise ValueError("Neutral axis not found within the maximum number of iterations.")
+        raise ValueError("Neutral axis not found (max iterations reached)")
 
     def interaction_curve(self, neutral_axis_range):
         """
