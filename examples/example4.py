@@ -3,8 +3,8 @@ import os
 # Add the project root to sys.path
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-from anysection.geometry.area import Rectangle, Circle, CompositeArea
-from anysection.sections.section import Section
+from anysection.area import Rectangle
+from anysection.section import Section
 from anysection.materials import Concrete_NonlinearEC2, Steel_Bilinear
 
 # Create Materials

@@ -1,5 +1,5 @@
 from math import pi
-from anysection.geometry.fiber import Fiber
+from anysection.fiber import Fiber
 
 
 class Area:

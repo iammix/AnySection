@@ -1,5 +1,5 @@
-from anysection.geometry.area import CompositeArea
-from anysection.geometry.fiber import Fiber
+from anysection.area import CompositeArea
+from anysection.fiber import Fiber
 class Section:
     """
     Class representing a structural section composed of fibers.

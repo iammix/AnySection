@@ -8,9 +8,9 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 if __name__ == "__main__":
     from anysection.materials import Concrete_NonlinearEC2, Steel_Bilinear
-    from anysection.sections.section import Section
-    from anysection.geometry.area import Rectangle
-    from anysection.solvers.solver import SectionSolver
+    from anysection.section import Section
+    from anysection.area import Rectangle
+    from anysection.solver import SectionSolver
 
     # Define Materials
     concrete = Concrete_NonlinearEC2(fcm=20e6, ec1=0.002, ecu1=0.0035)

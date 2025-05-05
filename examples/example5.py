@@ -2,19 +2,15 @@ import numpy as np
 import matplotlib.pyplot as plt
 import sys
 import os
-
-# Add the project root to sys.path
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-
-from anysection.materials import Concrete_NonlinearEC2, Steel_Bilinear
-from anysection.geometry.area import Tee
-from anysection.sections.section import Section
-from anysection.solvers.solver import SectionSolver
+x
+from anysection.material import Concrete_NonlinearEC2, Steel_Bilinear
+from anysection.area import Tee
+from anysection.section import Section
+from anysection.solver import SectionSolver
 
 # --- Define Materials ---
 concrete = Concrete_NonlinearEC2(fcm=20e6, ec1=0.002, ecu1=0.0035)
 steel = Steel_Bilinear(Es=200e9, fy=500e6, euk=0.02)
-
 # --- Create Section ---
 section = Section("Tee Section with Axial Load")
 tee = Tee(bf=1.5, hf=0.3, bw=0.7, hw=0.15)  # all in meters
@@ -31,7 +27,7 @@ for x, y in reinf_positions:
 solver = SectionSolver(section)
 
 # --- Moment-Curvature Analysis with Axial Load ---
-curvatures = np.linspace(0, 0.02, 100)
+curvatures = np.linspace(0, 0.2, 100)
 axial_force = -500e3  # 500 kN axial compression
 
 results = solver.moment_curvature_analysis(curvatures, axial_force=axial_force)

@@ -7,7 +7,7 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 import matplotlib.pyplot as plt
 import numpy as np
 from anysection.materials import Concrete_NonlinearEC2, Steel_Bilinear
-from anysection.sections.section import Section
+from anysection.section import Section
 from anysection.solvers import SectionSolver
 
 
