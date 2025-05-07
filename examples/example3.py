@@ -3,18 +3,21 @@ import os
 import numpy as np
 import matplotlib.pyplot as plt
 
-# Add the project root to sys.path
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-
 if __name__ == "__main__":
-    from anysection.materials import Concrete_NonlinearEC2, Steel_Bilinear
+    from anysection.material import Concrete_NonlinearEC2, Steel_ParkSampson
     from anysection.section import Section
     from anysection.area import Rectangle
     from anysection.solver import SectionSolver
 
     # Define Materials
     concrete = Concrete_NonlinearEC2(fcm=20e6, ec1=0.002, ecu1=0.0035)
-    steel = Steel_Bilinear(Es=200e9, fy=500e6, euk=0.02)  # Added euk (Ultimate strain)
+    steel = Steel_ParkSampson(
+        Es=200e9,  # Elastic modulus [Pa]
+        fy=500e6,  # Yield stress [Pa]
+        fu=600e6,  # Ultimate stress [Pa]
+        esh=0.01,  # Strain at start of hardening
+        esu=0.05  # Ultimate strain
+    )
 
     # Create Section
     section = Section("Rectangular Beam")

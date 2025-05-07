@@ -1,5 +1,3 @@
-# anysection/utils/gauss_tables.py
-
 class GaussTables:
     @staticmethod
     def get_gauss_points(n):

@@ -1,6 +1,21 @@
-# anysection/materials/material.py
-
 from math import sqrt, pow
+from enum import Enum
+from dataclasses import dataclass
+import numpy as np
+
+class ModelType(Enum):
+    CONCRETE_PARABOLIC_LINEAR_EC2 = "Concrete_ParabolicLinearEC2"
+    CONCRETE_Nonlinear_EC2 = "Concrete_NonlinearEC2"
+    CONCRETE_POPOVICS = "Concrete_Popovics"
+    CONCRETE_PARABOLIC_LINEAR_GENERAL = "Concrete_ParabolicLinearGeneral"
+    CONCRETE_PARABOLIC_LINEAR_FRC = "Concrete_ParabolicLinearFRC"
+    CONCRETE_MC90_GENERAL = "Concrete_MC90General"
+    CONCRETE_CONFINED_KAPPOS = "Concrete_ConfinedKappos"
+    CONCRETE_CONFINED_SPOELSTRA = "Concrete_ConfinedSpoelstra"
+    STEEL_BILINEAR = "Steel_Bilinear"
+    STEEL_PARK_SAMPSON = "Steel_ParkSampson"
+    FRP_LINEAR = "FRP_Linear"
+
 
 class Material:
     """
@@ -320,7 +335,7 @@ class MaterialFactory:
 if __name__ == "__main__":
     # Example for Concrete_NonlinearEC2
     concrete = Concrete_NonlinearEC2(fcm=30e6, ec1=0.002, ecu1=0.0035)
-    strain = -0.0025
+    strain = -0.0035
     print(concrete)
     print(f"Stress at strain {strain}: {concrete.stress(strain)}")
     print(f"Failure: {'Yes' if concrete.is_failure(strain) else 'No'}")
