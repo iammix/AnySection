@@ -1,0 +1,167 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>anysection.utils.globals &mdash; AnySection 1.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../_static/documentation_options.js?v=8d563738"></script>
+      <script src="../../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            AnySection
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../modules.html">anysection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../anysection.html">anysection package</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">AnySection</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">anysection.utils.globals</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for anysection.utils.globals</h1><div class="highlight"><pre>
+<div class="viewcode-block" id="Globals">
+<a class="viewcode-back" href="../../../anysection.utils.html#anysection.utils.globals.Globals">[docs]</a>
+<span></span><span class="k">class</span><span class="w"> </span><span class="nc">Globals</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    This class contains global constants used throughout the AnySection library.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># Precision tolerances</span>
+    <span class="n">ZERO</span> <span class="o">=</span> <span class="mf">1e-6</span>               <span class="c1"># General zero tolerance</span>
+    <span class="n">E_TOL</span> <span class="o">=</span> <span class="mf">1e-5</span>              <span class="c1"># Tolerance for strain calculations</span>
+    <span class="n">N_TOL</span> <span class="o">=</span> <span class="mf">1e-5</span>              <span class="c1"># Tolerance for axial force calculations</span>
+    <span class="n">D_TOL</span> <span class="o">=</span> <span class="mf">1e-5</span>              <span class="c1"># Tolerance for displacement or distance calculations</span>
+    <span class="n">TOL_MP</span> <span class="o">=</span> <span class="mf">1e-3</span>             <span class="c1"># Tolerance for moment calculations</span>
+
+    <span class="c1"># Brent Solver settings</span>
+    <span class="n">MAX_EVALS</span> <span class="o">=</span> <span class="mi">1000</span>          <span class="c1"># Maximum evaluations for Brent solver</span>
+    <span class="n">EXP_START_NA</span> <span class="o">=</span> <span class="mi">5</span>          <span class="c1"># Starting exponent for neutral axis search</span>
+    <span class="n">EXP_START_NE</span> <span class="o">=</span> <span class="mi">5</span>          <span class="c1"># Starting exponent for eccentricity search</span>
+    <span class="n">EXP_START_NU</span> <span class="o">=</span> <span class="mi">5</span>          <span class="c1"># Starting exponent for angle search</span>
+
+    <span class="c1"># Integration constants</span>
+    <span class="n">PI</span> <span class="o">=</span> <span class="mf">3.141592653589793</span>    <span class="c1"># Pi constant</span>
+    <span class="n">DEG_TO_RAD</span> <span class="o">=</span> <span class="n">PI</span> <span class="o">/</span> <span class="mf">180.0</span>   <span class="c1"># Degrees to radians conversion</span>
+    <span class="n">RAD_TO_DEG</span> <span class="o">=</span> <span class="mf">180.0</span> <span class="o">/</span> <span class="n">PI</span>   <span class="c1"># Radians to degrees conversion</span>
+
+    <span class="c1"># Other constants</span>
+    <span class="n">INF</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="s1">&#39;inf&#39;</span><span class="p">)</span>        <span class="c1"># Representation of infinity</span>
+    <span class="n">NEG_INF</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="s1">&#39;-inf&#39;</span><span class="p">)</span>   <span class="c1"># Representation of negative infinity</span>
+
+<div class="viewcode-block" id="Globals.is_close">
+<a class="viewcode-back" href="../../../anysection.utils.html#anysection.utils.globals.Globals.is_close">[docs]</a>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">is_close</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">tol</span><span class="o">=</span><span class="n">ZERO</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Check if two values are approximately equal within a specified tolerance.</span>
+
+<span class="sd">        Parameters:</span>
+<span class="sd">            a (float): First value.</span>
+<span class="sd">            b (float): Second value.</span>
+<span class="sd">            tol (float): Tolerance.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            bool: True if values are close, False otherwise.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="nb">abs</span><span class="p">(</span><span class="n">a</span> <span class="o">-</span> <span class="n">b</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="n">tol</span></div>
+
+
+<div class="viewcode-block" id="Globals.clamp">
+<a class="viewcode-back" href="../../../anysection.utils.html#anysection.utils.globals.Globals.clamp">[docs]</a>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">clamp</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">min_value</span><span class="p">,</span> <span class="n">max_value</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Clamp a value between a minimum and maximum.</span>
+
+<span class="sd">        Parameters:</span>
+<span class="sd">            value (float): The value to clamp.</span>
+<span class="sd">            min_value (float): Minimum allowed value.</span>
+<span class="sd">            max_value (float): Maximum allowed value.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            float: Clamped value.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="nb">max</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">max_value</span><span class="p">),</span> <span class="n">min_value</span><span class="p">)</span></div>
+</div>
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Konstantinos Mixios.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

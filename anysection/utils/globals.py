@@ -1,5 +1,3 @@
-# anysection/utils/globals.py
-
 class Globals:
     """
     This class contains global constants used throughout the AnySection library.

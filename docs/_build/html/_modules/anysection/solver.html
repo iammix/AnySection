@@ -1,0 +1,290 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>anysection.solver &mdash; AnySection 1.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=8d563738"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            AnySection
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html">anysection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../anysection.html">anysection package</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">AnySection</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">anysection.solver</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for anysection.solver</h1><div class="highlight"><pre>
+<span></span><span class="c1"># anysection/solvers/section_solver.py</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<div class="viewcode-block" id="SectionSolver">
+<a class="viewcode-back" href="../../anysection.html#anysection.solver.SectionSolver">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">SectionSolver</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Class to perform section analysis to determine axial forces, moments,</span>
+<span class="sd">    and moment-curvature relationships using iterative solvers.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">section</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Initialize the SectionSolver.</span>
+
+<span class="sd">        Parameters:</span>
+<span class="sd">            section (Section): The section object to analyze.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">section</span> <span class="o">=</span> <span class="n">section</span>
+
+<div class="viewcode-block" id="SectionSolver.calculate_axial_force">
+<a class="viewcode-back" href="../../anysection.html#anysection.solver.SectionSolver.calculate_axial_force">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">calculate_axial_force</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">neutral_axis</span><span class="p">,</span> <span class="n">curvature</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Calculate the axial force in the section for a given neutral axis position and curvature.</span>
+
+<span class="sd">        Parameters:</span>
+<span class="sd">            neutral_axis (float): Position of the neutral axis.</span>
+<span class="sd">            curvature (float): Curvature applied to the section.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            float: Total axial force.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">total_force</span> <span class="o">=</span> <span class="mf">0.0</span>
+
+        <span class="c1"># Iterate through fibers in the section</span>
+        <span class="k">for</span> <span class="n">fiber</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">section</span><span class="o">.</span><span class="n">fibers</span><span class="p">:</span>
+            <span class="c1"># Calculate strain in the fiber based on curvature and neutral axis</span>
+            <span class="n">strain</span> <span class="o">=</span> <span class="n">curvature</span> <span class="o">*</span> <span class="p">(</span><span class="n">fiber</span><span class="o">.</span><span class="n">y</span> <span class="o">-</span> <span class="n">neutral_axis</span><span class="p">)</span>
+            <span class="n">stress</span> <span class="o">=</span> <span class="n">fiber</span><span class="o">.</span><span class="n">material</span><span class="o">.</span><span class="n">stress</span><span class="p">(</span><span class="n">strain</span><span class="p">)</span>
+            <span class="n">force</span> <span class="o">=</span> <span class="n">stress</span> <span class="o">*</span> <span class="n">fiber</span><span class="o">.</span><span class="n">area</span>
+            <span class="n">total_force</span> <span class="o">+=</span> <span class="n">force</span>
+
+        <span class="k">return</span> <span class="n">total_force</span></div>
+
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">calculate_moment_capacity</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">curvature</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Calculate the bending moment capacity of the section for a given curvature.</span>
+
+<span class="sd">        Parameters:</span>
+<span class="sd">            curvature (float): Curvature applied to the section.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            float: Total bending moment.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">total_moment</span> <span class="o">=</span> <span class="mf">0.0</span>
+        <span class="n">neutral_axis</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">section</span><span class="o">.</span><span class="n">centroid</span><span class="p">()[</span><span class="mi">1</span><span class="p">]</span>  <span class="c1"># Use section centroid as neutral axis</span>
+
+        <span class="c1"># Iterate through fibers in the section</span>
+        <span class="k">for</span> <span class="n">fiber</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">section</span><span class="o">.</span><span class="n">fibers</span><span class="p">:</span>
+            <span class="n">strain</span> <span class="o">=</span> <span class="n">curvature</span> <span class="o">*</span> <span class="p">(</span><span class="n">fiber</span><span class="o">.</span><span class="n">y</span> <span class="o">-</span> <span class="n">neutral_axis</span><span class="p">)</span>
+            <span class="n">stress</span> <span class="o">=</span> <span class="n">fiber</span><span class="o">.</span><span class="n">material</span><span class="o">.</span><span class="n">stress</span><span class="p">(</span><span class="n">strain</span><span class="p">)</span>
+            <span class="n">force</span> <span class="o">=</span> <span class="n">stress</span> <span class="o">*</span> <span class="n">fiber</span><span class="o">.</span><span class="n">area</span>
+            <span class="n">moment_arm</span> <span class="o">=</span> <span class="n">fiber</span><span class="o">.</span><span class="n">y</span> <span class="o">-</span> <span class="n">neutral_axis</span>
+            <span class="n">total_moment</span> <span class="o">+=</span> <span class="n">force</span> <span class="o">*</span> <span class="n">moment_arm</span>
+
+        <span class="k">return</span> <span class="n">total_moment</span>
+
+<div class="viewcode-block" id="SectionSolver.moment_curvature_analysis">
+<a class="viewcode-back" href="../../anysection.html#anysection.solver.SectionSolver.moment_curvature_analysis">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">moment_curvature_analysis</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">curvature_range</span><span class="p">,</span> <span class="n">axial_force</span><span class="o">=</span><span class="mf">0.0</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Perform moment-curvature analysis for a specified axial force.</span>
+
+<span class="sd">        Parameters:</span>
+<span class="sd">            curvature_range (iterable): List or array of curvature values.</span>
+<span class="sd">            axial_force (float): Applied axial force (positive = compression).</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            list: List of (curvature, moment) tuples.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">results</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="k">for</span> <span class="n">curvature</span> <span class="ow">in</span> <span class="n">curvature_range</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">neutral_axis</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">find_neutral_axis</span><span class="p">(</span><span class="n">axial_force</span><span class="p">,</span> <span class="n">curvature</span><span class="p">)</span>
+                <span class="n">moment</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">calculate_moment_capacity</span><span class="p">(</span><span class="n">curvature</span><span class="p">,</span> <span class="n">neutral_axis</span><span class="p">)</span>
+                <span class="n">results</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">curvature</span><span class="p">,</span> <span class="n">moment</span><span class="p">))</span>
+            <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;⚠️ Curvature </span><span class="si">{</span><span class="n">curvature</span><span class="si">:</span><span class="s2">.5f</span><span class="si">}</span><span class="s2"> failed: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+                <span class="n">results</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">curvature</span><span class="p">,</span> <span class="kc">None</span><span class="p">))</span>
+
+        <span class="k">return</span> <span class="n">results</span></div>
+
+
+<div class="viewcode-block" id="SectionSolver.calculate_moment_capacity">
+<a class="viewcode-back" href="../../anysection.html#anysection.solver.SectionSolver.calculate_moment_capacity">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">calculate_moment_capacity</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">curvature</span><span class="p">,</span> <span class="n">neutral_axis</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Calculate bending moment for a given curvature and neutral axis.</span>
+
+<span class="sd">        Parameters:</span>
+<span class="sd">            curvature (float): Section curvature.</span>
+<span class="sd">            neutral_axis (float): Position of the neutral axis.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            float: Resulting moment.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">total_moment</span> <span class="o">=</span> <span class="mf">0.0</span>
+
+        <span class="k">for</span> <span class="n">fiber</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">section</span><span class="o">.</span><span class="n">fibers</span><span class="p">:</span>
+            <span class="n">strain</span> <span class="o">=</span> <span class="n">curvature</span> <span class="o">*</span> <span class="p">(</span><span class="n">fiber</span><span class="o">.</span><span class="n">y</span> <span class="o">-</span> <span class="n">neutral_axis</span><span class="p">)</span>
+            <span class="n">stress</span> <span class="o">=</span> <span class="n">fiber</span><span class="o">.</span><span class="n">material</span><span class="o">.</span><span class="n">stress</span><span class="p">(</span><span class="n">strain</span><span class="p">)</span>
+            <span class="n">force</span> <span class="o">=</span> <span class="n">stress</span> <span class="o">*</span> <span class="n">fiber</span><span class="o">.</span><span class="n">area</span>
+            <span class="n">lever_arm</span> <span class="o">=</span> <span class="n">fiber</span><span class="o">.</span><span class="n">y</span> <span class="o">-</span> <span class="n">neutral_axis</span>
+            <span class="n">total_moment</span> <span class="o">+=</span> <span class="n">force</span> <span class="o">*</span> <span class="n">lever_arm</span>
+
+        <span class="k">return</span> <span class="n">total_moment</span></div>
+
+
+<div class="viewcode-block" id="SectionSolver.find_neutral_axis">
+<a class="viewcode-back" href="../../anysection.html#anysection.solver.SectionSolver.find_neutral_axis">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">find_neutral_axis</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">target_axial_force</span><span class="p">,</span> <span class="n">curvature</span><span class="p">,</span> <span class="n">tolerance</span><span class="o">=</span><span class="mf">1e-6</span><span class="p">,</span> <span class="n">max_iter</span><span class="o">=</span><span class="mi">100</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Find the neutral axis depth that satisfies the target axial force.</span>
+
+<span class="sd">        Parameters:</span>
+<span class="sd">            target_axial_force (float): Applied axial force.</span>
+<span class="sd">            curvature (float): Section curvature.</span>
+<span class="sd">            tolerance (float): Convergence tolerance.</span>
+<span class="sd">            max_iter (int): Max iterations.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            float: Neutral axis position.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">y_min</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">fiber</span><span class="o">.</span><span class="n">y</span> <span class="k">for</span> <span class="n">fiber</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">section</span><span class="o">.</span><span class="n">fibers</span><span class="p">)</span>
+        <span class="n">y_max</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">fiber</span><span class="o">.</span><span class="n">y</span> <span class="k">for</span> <span class="n">fiber</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">section</span><span class="o">.</span><span class="n">fibers</span><span class="p">)</span>
+
+        <span class="n">low</span> <span class="o">=</span> <span class="n">y_min</span>
+        <span class="n">high</span> <span class="o">=</span> <span class="n">y_max</span>
+
+        <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">max_iter</span><span class="p">):</span>
+            <span class="n">mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">low</span> <span class="o">+</span> <span class="n">high</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
+            <span class="n">axial</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">calculate_axial_force</span><span class="p">(</span><span class="n">mid</span><span class="p">,</span> <span class="n">curvature</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">axial</span> <span class="o">-</span> <span class="n">target_axial_force</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">tolerance</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">mid</span>
+            <span class="k">elif</span> <span class="n">axial</span> <span class="o">&gt;</span> <span class="n">target_axial_force</span><span class="p">:</span>
+                <span class="n">low</span> <span class="o">=</span> <span class="n">mid</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">high</span> <span class="o">=</span> <span class="n">mid</span>
+
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Neutral axis not found (max iterations reached)&quot;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="SectionSolver.interaction_curve">
+<a class="viewcode-back" href="../../anysection.html#anysection.solver.SectionSolver.interaction_curve">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">interaction_curve</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">neutral_axis_range</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Generate the interaction curve (axial force vs. bending moment).</span>
+
+<span class="sd">        Parameters:</span>
+<span class="sd">            neutral_axis_range (tuple): (min, max) range for the neutral axis.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            list: List of (axial_force, bending_moment) tuples.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">results</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">min_na</span><span class="p">,</span> <span class="n">max_na</span> <span class="o">=</span> <span class="n">neutral_axis_range</span>
+        <span class="n">steps</span> <span class="o">=</span> <span class="mi">50</span>
+        <span class="n">delta</span> <span class="o">=</span> <span class="p">(</span><span class="n">max_na</span> <span class="o">-</span> <span class="n">min_na</span><span class="p">)</span> <span class="o">/</span> <span class="n">steps</span>
+
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">steps</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+            <span class="n">na_pos</span> <span class="o">=</span> <span class="n">min_na</span> <span class="o">+</span> <span class="n">i</span> <span class="o">*</span> <span class="n">delta</span>
+            <span class="n">axial_force</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">calculate_axial_force</span><span class="p">(</span><span class="n">na_pos</span><span class="p">,</span> <span class="n">curvature</span><span class="o">=</span><span class="mf">0.002</span><span class="p">)</span>
+            <span class="n">bending_moment</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">calculate_moment_capacity</span><span class="p">(</span><span class="n">curvature</span><span class="o">=</span><span class="mf">0.002</span><span class="p">)</span>
+            <span class="n">results</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">axial_force</span><span class="p">,</span> <span class="n">bending_moment</span><span class="p">))</span>
+
+        <span class="k">return</span> <span class="n">results</span></div>
+
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;SectionSolver for </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">section</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span></div>
+
+
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Konstantinos Mixios.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
