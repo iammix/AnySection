@@ -1,8 +1,5 @@
 import numpy as np
 import matplotlib.pyplot as plt
-import sys
-import os
-x
 from anysection.material import Concrete_NonlinearEC2, Steel_Bilinear
 from anysection.area import Tee
 from anysection.section import Section
