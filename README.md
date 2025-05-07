@@ -150,11 +150,5 @@ This project is licensed under the MIT License.
 If you use AnySection in your research, please cite the following paper:
 
 ```bibtex
-@unknown{unknown,
-author = {Papanikolaou, Vassilis},
-year = {2019},
-month = {11},
-pages = {},
-title = {AnySection : Software for the analysis of arbitrary composite sections in biaxial bending and axial load}
-}
+Papanikolaou, Vassilis. (2019). AnySection : Software for the analysis of arbitrary composite sections in biaxial bending and axial load. 
 ```
