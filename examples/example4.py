@@ -5,7 +5,7 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 from anysection.area import Rectangle
 from anysection.section import Section
-from anysection.materials import Concrete_NonlinearEC2, Steel_Bilinear
+from anysection.material import Concrete_NonlinearEC2, Steel_Bilinear
 
 # Create Materials
 concrete = Concrete_NonlinearEC2(fcm=20e6, ec1=0.002, ecu1=0.0035)

@@ -9,7 +9,7 @@ from anysection.area import Rectangle
 
 
 if __name__ == "__main__":
-    from anysection.materials import Concrete_NonlinearEC2, Steel_Bilinear
+    from anysection.material import Concrete_NonlinearEC2, Steel_Bilinear
     from anysection.section import Section
     from anysection.solver import SectionSolver
 

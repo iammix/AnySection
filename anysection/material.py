@@ -4,6 +4,9 @@ from dataclasses import dataclass
 import numpy as np
 
 class ModelType(Enum):
+    """
+    Enumeration of available material model types for concrete, steel, and FRP.
+    """
     CONCRETE_PARABOLIC_LINEAR_EC2 = "Concrete_ParabolicLinearEC2"
     CONCRETE_Nonlinear_EC2 = "Concrete_NonlinearEC2"
     CONCRETE_POPOVICS = "Concrete_Popovics"
@@ -19,22 +22,39 @@ class ModelType(Enum):
 
 class Material:
     """
-    Base class for all material types.
+    Abstract base class for all material models.
     """
 
     def __init__(self, name):
+        """
+        Initialize a material with a given name.
+
+        Args:
+            name (str): The name of the material model.
+        """
         self.name = name
 
     def stress(self, strain):
         """
-        Calculate stress based on the strain input.
-        To be implemented by subclasses.
+        Calculate stress based on strain.
+
+        Args:
+            strain (float): Input strain.
+
+        Returns:
+            float: Computed stress.
         """
         raise NotImplementedError("This method should be implemented by subclasses.")
 
     def is_failure(self, strain):
         """
-        Check if the material has failed under the given strain.
+        Determine if the material has failed at the given strain.
+
+        Args:
+            strain (float): Input strain.
+
+        Returns:
+            bool: True if failed, False otherwise.
         """
         raise NotImplementedError("This method should be implemented by subclasses.")
 
@@ -45,6 +65,14 @@ class Material:
 # ----------------- CONCRETE MATERIALS ----------------- #
 
 class Concrete_NonlinearEC2(Material):
+    """
+    EC2 nonlinear concrete model (parabolic up to ec1, then constant).
+
+    Args:
+        fcm (float): Mean compressive strength [Pa].
+        ec1 (float): Strain at peak stress.
+        ecu1 (float): Ultimate strain.
+    """
     def __init__(self, fcm, ec1, ecu1):
         super().__init__("Concrete_NonlinearEC2")
         self.fcm = fcm

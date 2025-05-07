@@ -5,4 +5,4 @@ from .section import *
 from .solver import *
 from .points import *
 from .points import *
-from utils.gauss_tables import *
+from .gauss_tables import *

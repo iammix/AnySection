@@ -1,0 +1,1303 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>anysection package &mdash; AnySection 1.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=8d563738"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="anysection.utils package" href="anysection.utils.html" />
+    <link rel="prev" title="anysection" href="modules.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            AnySection
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">anysection</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">anysection package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#subpackages">Subpackages</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="anysection.utils.html">anysection.utils package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-anysection.area">anysection.area module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#anysection.area.Area"><code class="docutils literal notranslate"><span class="pre">Area</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#anysection.area.Circle"><code class="docutils literal notranslate"><span class="pre">Circle</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#anysection.area.CompositeArea"><code class="docutils literal notranslate"><span class="pre">CompositeArea</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#anysection.area.Rectangle"><code class="docutils literal notranslate"><span class="pre">Rectangle</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#anysection.area.Tee"><code class="docutils literal notranslate"><span class="pre">Tee</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#anysection.area.Triangle"><code class="docutils literal notranslate"><span class="pre">Triangle</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-anysection.fiber">anysection.fiber module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#anysection.fiber.Fiber"><code class="docutils literal notranslate"><span class="pre">Fiber</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-anysection.gauss_tables">anysection.gauss_tables module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#anysection.gauss_tables.GaussTables"><code class="docutils literal notranslate"><span class="pre">GaussTables</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-anysection.material">anysection.material module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#anysection.material.Concrete_ConfinedKappos"><code class="docutils literal notranslate"><span class="pre">Concrete_ConfinedKappos</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#anysection.material.Concrete_ConfinedSpoelstra"><code class="docutils literal notranslate"><span class="pre">Concrete_ConfinedSpoelstra</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#anysection.material.Concrete_MC90General"><code class="docutils literal notranslate"><span class="pre">Concrete_MC90General</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#anysection.material.Concrete_NonlinearEC2"><code class="docutils literal notranslate"><span class="pre">Concrete_NonlinearEC2</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#anysection.material.Concrete_ParabolicLinearEC2"><code class="docutils literal notranslate"><span class="pre">Concrete_ParabolicLinearEC2</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#anysection.material.Concrete_ParabolicLinearFRC"><code class="docutils literal notranslate"><span class="pre">Concrete_ParabolicLinearFRC</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#anysection.material.Concrete_ParabolicLinearGeneral"><code class="docutils literal notranslate"><span class="pre">Concrete_ParabolicLinearGeneral</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#anysection.material.Concrete_Popovics"><code class="docutils literal notranslate"><span class="pre">Concrete_Popovics</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#anysection.material.FRP_Linear"><code class="docutils literal notranslate"><span class="pre">FRP_Linear</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#anysection.material.Material"><code class="docutils literal notranslate"><span class="pre">Material</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#anysection.material.MaterialFactory"><code class="docutils literal notranslate"><span class="pre">MaterialFactory</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#anysection.material.ModelType"><code class="docutils literal notranslate"><span class="pre">ModelType</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#anysection.material.Steel_Bilinear"><code class="docutils literal notranslate"><span class="pre">Steel_Bilinear</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#anysection.material.Steel_ParkSampson"><code class="docutils literal notranslate"><span class="pre">Steel_ParkSampson</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-anysection.points">anysection.points module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#anysection.points.Point"><code class="docutils literal notranslate"><span class="pre">Point</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-anysection.section">anysection.section module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#anysection.section.Section"><code class="docutils literal notranslate"><span class="pre">Section</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-anysection.solver">anysection.solver module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#anysection.solver.SectionSolver"><code class="docutils literal notranslate"><span class="pre">SectionSolver</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-anysection">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">anysection package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="anysection.utils.html">anysection.utils package</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-anysection.area">anysection.area module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#anysection.area.Area"><code class="docutils literal notranslate"><span class="pre">Area</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#anysection.area.Area.area"><code class="docutils literal notranslate"><span class="pre">Area.area()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#anysection.area.Area.centroid"><code class="docutils literal notranslate"><span class="pre">Area.centroid()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#anysection.area.Area.moment_of_inertia"><code class="docutils literal notranslate"><span class="pre">Area.moment_of_inertia()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#anysection.area.Circle"><code class="docutils literal notranslate"><span class="pre">Circle</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#anysection.area.Circle.area"><code class="docutils literal notranslate"><span class="pre">Circle.area()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#anysection.area.Circle.moment_of_inertia"><code class="docutils literal notranslate"><span class="pre">Circle.moment_of_inertia()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#anysection.area.CompositeArea"><code class="docutils literal notranslate"><span class="pre">CompositeArea</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#anysection.area.CompositeArea.add_area"><code class="docutils literal notranslate"><span class="pre">CompositeArea.add_area()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#anysection.area.CompositeArea.area"><code class="docutils literal notranslate"><span class="pre">CompositeArea.area()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#anysection.area.CompositeArea.centroid"><code class="docutils literal notranslate"><span class="pre">CompositeArea.centroid()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#anysection.area.CompositeArea.moment_of_inertia"><code class="docutils literal notranslate"><span class="pre">CompositeArea.moment_of_inertia()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#anysection.area.Rectangle"><code class="docutils literal notranslate"><span class="pre">Rectangle</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#anysection.area.Rectangle.area"><code class="docutils literal notranslate"><span class="pre">Rectangle.area()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#anysection.area.Rectangle.moment_of_inertia"><code class="docutils literal notranslate"><span class="pre">Rectangle.moment_of_inertia()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#anysection.area.Tee"><code class="docutils literal notranslate"><span class="pre">Tee</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#anysection.area.Triangle"><code class="docutils literal notranslate"><span class="pre">Triangle</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#anysection.area.Triangle.area"><code class="docutils literal notranslate"><span class="pre">Triangle.area()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#anysection.area.Triangle.moment_of_inertia"><code class="docutils literal notranslate"><span class="pre">Triangle.moment_of_inertia()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-anysection.fiber">anysection.fiber module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#anysection.fiber.Fiber"><code class="docutils literal notranslate"><span class="pre">Fiber</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#anysection.fiber.Fiber.centroid"><code class="docutils literal notranslate"><span class="pre">Fiber.centroid()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#anysection.fiber.Fiber.force"><code class="docutils literal notranslate"><span class="pre">Fiber.force()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#anysection.fiber.Fiber.stress"><code class="docutils literal notranslate"><span class="pre">Fiber.stress()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-anysection.gauss_tables">anysection.gauss_tables module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#anysection.gauss_tables.GaussTables"><code class="docutils literal notranslate"><span class="pre">GaussTables</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#anysection.gauss_tables.GaussTables.get_gauss_points"><code class="docutils literal notranslate"><span class="pre">GaussTables.get_gauss_points()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-anysection.material">anysection.material module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#anysection.material.Concrete_ConfinedKappos"><code class="docutils literal notranslate"><span class="pre">Concrete_ConfinedKappos</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#anysection.material.Concrete_ConfinedKappos.is_failure"><code class="docutils literal notranslate"><span class="pre">Concrete_ConfinedKappos.is_failure()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#anysection.material.Concrete_ConfinedKappos.stress"><code class="docutils literal notranslate"><span class="pre">Concrete_ConfinedKappos.stress()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#anysection.material.Concrete_ConfinedSpoelstra"><code class="docutils literal notranslate"><span class="pre">Concrete_ConfinedSpoelstra</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#anysection.material.Concrete_ConfinedSpoelstra.is_failure"><code class="docutils literal notranslate"><span class="pre">Concrete_ConfinedSpoelstra.is_failure()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#anysection.material.Concrete_ConfinedSpoelstra.stress"><code class="docutils literal notranslate"><span class="pre">Concrete_ConfinedSpoelstra.stress()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#anysection.material.Concrete_MC90General"><code class="docutils literal notranslate"><span class="pre">Concrete_MC90General</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#anysection.material.Concrete_MC90General.is_failure"><code class="docutils literal notranslate"><span class="pre">Concrete_MC90General.is_failure()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#anysection.material.Concrete_MC90General.stress"><code class="docutils literal notranslate"><span class="pre">Concrete_MC90General.stress()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#anysection.material.Concrete_NonlinearEC2"><code class="docutils literal notranslate"><span class="pre">Concrete_NonlinearEC2</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#anysection.material.Concrete_NonlinearEC2.is_failure"><code class="docutils literal notranslate"><span class="pre">Concrete_NonlinearEC2.is_failure()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#anysection.material.Concrete_NonlinearEC2.stress"><code class="docutils literal notranslate"><span class="pre">Concrete_NonlinearEC2.stress()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#anysection.material.Concrete_ParabolicLinearEC2"><code class="docutils literal notranslate"><span class="pre">Concrete_ParabolicLinearEC2</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#anysection.material.Concrete_ParabolicLinearEC2.is_failure"><code class="docutils literal notranslate"><span class="pre">Concrete_ParabolicLinearEC2.is_failure()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#anysection.material.Concrete_ParabolicLinearEC2.stress"><code class="docutils literal notranslate"><span class="pre">Concrete_ParabolicLinearEC2.stress()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#anysection.material.Concrete_ParabolicLinearFRC"><code class="docutils literal notranslate"><span class="pre">Concrete_ParabolicLinearFRC</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#anysection.material.Concrete_ParabolicLinearFRC.is_failure"><code class="docutils literal notranslate"><span class="pre">Concrete_ParabolicLinearFRC.is_failure()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#anysection.material.Concrete_ParabolicLinearFRC.stress"><code class="docutils literal notranslate"><span class="pre">Concrete_ParabolicLinearFRC.stress()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#anysection.material.Concrete_ParabolicLinearGeneral"><code class="docutils literal notranslate"><span class="pre">Concrete_ParabolicLinearGeneral</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#anysection.material.Concrete_ParabolicLinearGeneral.is_failure"><code class="docutils literal notranslate"><span class="pre">Concrete_ParabolicLinearGeneral.is_failure()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#anysection.material.Concrete_ParabolicLinearGeneral.stress"><code class="docutils literal notranslate"><span class="pre">Concrete_ParabolicLinearGeneral.stress()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#anysection.material.Concrete_Popovics"><code class="docutils literal notranslate"><span class="pre">Concrete_Popovics</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#anysection.material.Concrete_Popovics.is_failure"><code class="docutils literal notranslate"><span class="pre">Concrete_Popovics.is_failure()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#anysection.material.Concrete_Popovics.stress"><code class="docutils literal notranslate"><span class="pre">Concrete_Popovics.stress()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#anysection.material.FRP_Linear"><code class="docutils literal notranslate"><span class="pre">FRP_Linear</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#anysection.material.FRP_Linear.is_failure"><code class="docutils literal notranslate"><span class="pre">FRP_Linear.is_failure()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#anysection.material.FRP_Linear.stress"><code class="docutils literal notranslate"><span class="pre">FRP_Linear.stress()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#anysection.material.Material"><code class="docutils literal notranslate"><span class="pre">Material</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#anysection.material.Material.is_failure"><code class="docutils literal notranslate"><span class="pre">Material.is_failure()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#anysection.material.Material.stress"><code class="docutils literal notranslate"><span class="pre">Material.stress()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#anysection.material.MaterialFactory"><code class="docutils literal notranslate"><span class="pre">MaterialFactory</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#anysection.material.MaterialFactory.create_material"><code class="docutils literal notranslate"><span class="pre">MaterialFactory.create_material()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#anysection.material.ModelType"><code class="docutils literal notranslate"><span class="pre">ModelType</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#anysection.material.ModelType.CONCRETE_CONFINED_KAPPOS"><code class="docutils literal notranslate"><span class="pre">ModelType.CONCRETE_CONFINED_KAPPOS</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#anysection.material.ModelType.CONCRETE_CONFINED_SPOELSTRA"><code class="docutils literal notranslate"><span class="pre">ModelType.CONCRETE_CONFINED_SPOELSTRA</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#anysection.material.ModelType.CONCRETE_MC90_GENERAL"><code class="docutils literal notranslate"><span class="pre">ModelType.CONCRETE_MC90_GENERAL</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#anysection.material.ModelType.CONCRETE_Nonlinear_EC2"><code class="docutils literal notranslate"><span class="pre">ModelType.CONCRETE_Nonlinear_EC2</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#anysection.material.ModelType.CONCRETE_PARABOLIC_LINEAR_EC2"><code class="docutils literal notranslate"><span class="pre">ModelType.CONCRETE_PARABOLIC_LINEAR_EC2</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#anysection.material.ModelType.CONCRETE_PARABOLIC_LINEAR_FRC"><code class="docutils literal notranslate"><span class="pre">ModelType.CONCRETE_PARABOLIC_LINEAR_FRC</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#anysection.material.ModelType.CONCRETE_PARABOLIC_LINEAR_GENERAL"><code class="docutils literal notranslate"><span class="pre">ModelType.CONCRETE_PARABOLIC_LINEAR_GENERAL</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#anysection.material.ModelType.CONCRETE_POPOVICS"><code class="docutils literal notranslate"><span class="pre">ModelType.CONCRETE_POPOVICS</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#anysection.material.ModelType.FRP_LINEAR"><code class="docutils literal notranslate"><span class="pre">ModelType.FRP_LINEAR</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#anysection.material.ModelType.STEEL_BILINEAR"><code class="docutils literal notranslate"><span class="pre">ModelType.STEEL_BILINEAR</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#anysection.material.ModelType.STEEL_PARK_SAMPSON"><code class="docutils literal notranslate"><span class="pre">ModelType.STEEL_PARK_SAMPSON</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#anysection.material.Steel_Bilinear"><code class="docutils literal notranslate"><span class="pre">Steel_Bilinear</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#anysection.material.Steel_Bilinear.is_failure"><code class="docutils literal notranslate"><span class="pre">Steel_Bilinear.is_failure()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#anysection.material.Steel_Bilinear.stress"><code class="docutils literal notranslate"><span class="pre">Steel_Bilinear.stress()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#anysection.material.Steel_ParkSampson"><code class="docutils literal notranslate"><span class="pre">Steel_ParkSampson</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#anysection.material.Steel_ParkSampson.is_failure"><code class="docutils literal notranslate"><span class="pre">Steel_ParkSampson.is_failure()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#anysection.material.Steel_ParkSampson.stress"><code class="docutils literal notranslate"><span class="pre">Steel_ParkSampson.stress()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-anysection.points">anysection.points module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#anysection.points.Point"><code class="docutils literal notranslate"><span class="pre">Point</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#anysection.points.Point.distance_to"><code class="docutils literal notranslate"><span class="pre">Point.distance_to()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#anysection.points.Point.translate"><code class="docutils literal notranslate"><span class="pre">Point.translate()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-anysection.section">anysection.section module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#anysection.section.Section"><code class="docutils literal notranslate"><span class="pre">Section</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#anysection.section.Section.add_area"><code class="docutils literal notranslate"><span class="pre">Section.add_area()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#anysection.section.Section.add_fiber"><code class="docutils literal notranslate"><span class="pre">Section.add_fiber()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#anysection.section.Section.centroid"><code class="docutils literal notranslate"><span class="pre">Section.centroid()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#anysection.section.Section.moment_of_inertia"><code class="docutils literal notranslate"><span class="pre">Section.moment_of_inertia()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#anysection.section.Section.total_area"><code class="docutils literal notranslate"><span class="pre">Section.total_area()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-anysection.solver">anysection.solver module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#anysection.solver.SectionSolver"><code class="docutils literal notranslate"><span class="pre">SectionSolver</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#anysection.solver.SectionSolver.calculate_axial_force"><code class="docutils literal notranslate"><span class="pre">SectionSolver.calculate_axial_force()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#anysection.solver.SectionSolver.calculate_moment_capacity"><code class="docutils literal notranslate"><span class="pre">SectionSolver.calculate_moment_capacity()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#anysection.solver.SectionSolver.find_neutral_axis"><code class="docutils literal notranslate"><span class="pre">SectionSolver.find_neutral_axis()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#anysection.solver.SectionSolver.interaction_curve"><code class="docutils literal notranslate"><span class="pre">SectionSolver.interaction_curve()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#anysection.solver.SectionSolver.moment_curvature_analysis"><code class="docutils literal notranslate"><span class="pre">SectionSolver.moment_curvature_analysis()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-anysection">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">AnySection</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">anysection</a></li>
+      <li class="breadcrumb-item active">anysection package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/anysection.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="anysection-package">
+<h1>anysection package<a class="headerlink" href="#anysection-package" title="Link to this heading"></a></h1>
+<section id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Link to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="anysection.utils.html">anysection.utils package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="anysection.utils.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anysection.utils.html#module-anysection.utils.globals">anysection.utils.globals module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="anysection.utils.html#anysection.utils.globals.Globals"><code class="docutils literal notranslate"><span class="pre">Globals</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="anysection.utils.html#anysection.utils.globals.Globals.DEG_TO_RAD"><code class="docutils literal notranslate"><span class="pre">Globals.DEG_TO_RAD</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="anysection.utils.html#anysection.utils.globals.Globals.D_TOL"><code class="docutils literal notranslate"><span class="pre">Globals.D_TOL</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="anysection.utils.html#anysection.utils.globals.Globals.EXP_START_NA"><code class="docutils literal notranslate"><span class="pre">Globals.EXP_START_NA</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="anysection.utils.html#anysection.utils.globals.Globals.EXP_START_NE"><code class="docutils literal notranslate"><span class="pre">Globals.EXP_START_NE</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="anysection.utils.html#anysection.utils.globals.Globals.EXP_START_NU"><code class="docutils literal notranslate"><span class="pre">Globals.EXP_START_NU</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="anysection.utils.html#anysection.utils.globals.Globals.E_TOL"><code class="docutils literal notranslate"><span class="pre">Globals.E_TOL</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="anysection.utils.html#anysection.utils.globals.Globals.INF"><code class="docutils literal notranslate"><span class="pre">Globals.INF</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="anysection.utils.html#anysection.utils.globals.Globals.MAX_EVALS"><code class="docutils literal notranslate"><span class="pre">Globals.MAX_EVALS</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="anysection.utils.html#anysection.utils.globals.Globals.NEG_INF"><code class="docutils literal notranslate"><span class="pre">Globals.NEG_INF</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="anysection.utils.html#anysection.utils.globals.Globals.N_TOL"><code class="docutils literal notranslate"><span class="pre">Globals.N_TOL</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="anysection.utils.html#anysection.utils.globals.Globals.PI"><code class="docutils literal notranslate"><span class="pre">Globals.PI</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="anysection.utils.html#anysection.utils.globals.Globals.RAD_TO_DEG"><code class="docutils literal notranslate"><span class="pre">Globals.RAD_TO_DEG</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="anysection.utils.html#anysection.utils.globals.Globals.TOL_MP"><code class="docutils literal notranslate"><span class="pre">Globals.TOL_MP</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="anysection.utils.html#anysection.utils.globals.Globals.ZERO"><code class="docutils literal notranslate"><span class="pre">Globals.ZERO</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="anysection.utils.html#anysection.utils.globals.Globals.clamp"><code class="docutils literal notranslate"><span class="pre">Globals.clamp()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="anysection.utils.html#anysection.utils.globals.Globals.is_close"><code class="docutils literal notranslate"><span class="pre">Globals.is_close()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="anysection.utils.html#module-anysection.utils">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
+</section>
+<section id="module-anysection.area">
+<span id="anysection-area-module"></span><h2>anysection.area module<a class="headerlink" href="#module-anysection.area" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="anysection.area.Area">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">anysection.area.</span></span><span class="sig-name descname"><span class="pre">Area</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">centroid_x</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">centroid_y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/anysection/area.html#Area"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#anysection.area.Area" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Base class representing a geometric area.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="anysection.area.Area.area">
+<span class="sig-name descname"><span class="pre">area</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/anysection/area.html#Area.area"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#anysection.area.Area.area" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="anysection.area.Area.centroid">
+<span class="sig-name descname"><span class="pre">centroid</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/anysection/area.html#Area.centroid"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#anysection.area.Area.centroid" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="anysection.area.Area.moment_of_inertia">
+<span class="sig-name descname"><span class="pre">moment_of_inertia</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/anysection/area.html#Area.moment_of_inertia"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#anysection.area.Area.moment_of_inertia" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="anysection.area.Circle">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">anysection.area.</span></span><span class="sig-name descname"><span class="pre">Circle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">radius</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">centroid_x</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">centroid_y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/anysection/area.html#Circle"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#anysection.area.Circle" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#anysection.area.Area" title="anysection.area.Area"><code class="xref py py-class docutils literal notranslate"><span class="pre">Area</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="anysection.area.Circle.area">
+<span class="sig-name descname"><span class="pre">area</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/anysection/area.html#Circle.area"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#anysection.area.Circle.area" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="anysection.area.Circle.moment_of_inertia">
+<span class="sig-name descname"><span class="pre">moment_of_inertia</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/anysection/area.html#Circle.moment_of_inertia"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#anysection.area.Circle.moment_of_inertia" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="anysection.area.CompositeArea">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">anysection.area.</span></span><span class="sig-name descname"><span class="pre">CompositeArea</span></span><a class="reference internal" href="_modules/anysection/area.html#CompositeArea"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#anysection.area.CompositeArea" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#anysection.area.Area" title="anysection.area.Area"><code class="xref py py-class docutils literal notranslate"><span class="pre">Area</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="anysection.area.CompositeArea.add_area">
+<span class="sig-name descname"><span class="pre">add_area</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">area</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/anysection/area.html#CompositeArea.add_area"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#anysection.area.CompositeArea.add_area" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="anysection.area.CompositeArea.area">
+<span class="sig-name descname"><span class="pre">area</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/anysection/area.html#CompositeArea.area"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#anysection.area.CompositeArea.area" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="anysection.area.CompositeArea.centroid">
+<span class="sig-name descname"><span class="pre">centroid</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/anysection/area.html#CompositeArea.centroid"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#anysection.area.CompositeArea.centroid" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="anysection.area.CompositeArea.moment_of_inertia">
+<span class="sig-name descname"><span class="pre">moment_of_inertia</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/anysection/area.html#CompositeArea.moment_of_inertia"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#anysection.area.CompositeArea.moment_of_inertia" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="anysection.area.Rectangle">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">anysection.area.</span></span><span class="sig-name descname"><span class="pre">Rectangle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">width</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">height</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">centroid_x</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">centroid_y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/anysection/area.html#Rectangle"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#anysection.area.Rectangle" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#anysection.area.Area" title="anysection.area.Area"><code class="xref py py-class docutils literal notranslate"><span class="pre">Area</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="anysection.area.Rectangle.area">
+<span class="sig-name descname"><span class="pre">area</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/anysection/area.html#Rectangle.area"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#anysection.area.Rectangle.area" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="anysection.area.Rectangle.moment_of_inertia">
+<span class="sig-name descname"><span class="pre">moment_of_inertia</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/anysection/area.html#Rectangle.moment_of_inertia"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#anysection.area.Rectangle.moment_of_inertia" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="anysection.area.Tee">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">anysection.area.</span></span><span class="sig-name descname"><span class="pre">Tee</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bw</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hw</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/anysection/area.html#Tee"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#anysection.area.Tee" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#anysection.area.CompositeArea" title="anysection.area.CompositeArea"><code class="xref py py-class docutils literal notranslate"><span class="pre">CompositeArea</span></code></a></p>
+<p>T-section composed of a flange and web.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>bf</strong> – Flange width</p></li>
+<li><p><strong>hf</strong> – Flange height</p></li>
+<li><p><strong>bw</strong> – Web width</p></li>
+<li><p><strong>hw</strong> – Web height</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="anysection.area.Triangle">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">anysection.area.</span></span><span class="sig-name descname"><span class="pre">Triangle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">base</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">height</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">centroid_x</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">centroid_y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/anysection/area.html#Triangle"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#anysection.area.Triangle" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#anysection.area.Area" title="anysection.area.Area"><code class="xref py py-class docutils literal notranslate"><span class="pre">Area</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="anysection.area.Triangle.area">
+<span class="sig-name descname"><span class="pre">area</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/anysection/area.html#Triangle.area"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#anysection.area.Triangle.area" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="anysection.area.Triangle.moment_of_inertia">
+<span class="sig-name descname"><span class="pre">moment_of_inertia</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/anysection/area.html#Triangle.moment_of_inertia"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#anysection.area.Triangle.moment_of_inertia" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-anysection.fiber">
+<span id="anysection-fiber-module"></span><h2>anysection.fiber module<a class="headerlink" href="#module-anysection.fiber" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="anysection.fiber.Fiber">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">anysection.fiber.</span></span><span class="sig-name descname"><span class="pre">Fiber</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">area</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">material</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/anysection/fiber.html#Fiber"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#anysection.fiber.Fiber" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Represents a fiber in a section, with area and material properties.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="anysection.fiber.Fiber.centroid">
+<span class="sig-name descname"><span class="pre">centroid</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/anysection/fiber.html#Fiber.centroid"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#anysection.fiber.Fiber.centroid" title="Link to this definition"></a></dt>
+<dd><p>Return the centroid of the fiber.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="anysection.fiber.Fiber.force">
+<span class="sig-name descname"><span class="pre">force</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">strain</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/anysection/fiber.html#Fiber.force"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#anysection.fiber.Fiber.force" title="Link to this definition"></a></dt>
+<dd><p>Calculate force in the fiber as stress * area.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="anysection.fiber.Fiber.stress">
+<span class="sig-name descname"><span class="pre">stress</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">strain</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/anysection/fiber.html#Fiber.stress"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#anysection.fiber.Fiber.stress" title="Link to this definition"></a></dt>
+<dd><p>Calculate stress based on the material’s stress-strain relationship.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-anysection.gauss_tables">
+<span id="anysection-gauss-tables-module"></span><h2>anysection.gauss_tables module<a class="headerlink" href="#module-anysection.gauss_tables" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="anysection.gauss_tables.GaussTables">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">anysection.gauss_tables.</span></span><span class="sig-name descname"><span class="pre">GaussTables</span></span><a class="reference internal" href="_modules/anysection/gauss_tables.html#GaussTables"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#anysection.gauss_tables.GaussTables" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="anysection.gauss_tables.GaussTables.get_gauss_points">
+<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_gauss_points</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/anysection/gauss_tables.html#GaussTables.get_gauss_points"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#anysection.gauss_tables.GaussTables.get_gauss_points" title="Link to this definition"></a></dt>
+<dd><p>Returns Gauss points and weights for n-point integration.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>n</strong> (<em>int</em>) – Number of Gauss points (1 to 10 supported).</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>(list of points, list of weights)</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-anysection.material">
+<span id="anysection-material-module"></span><h2>anysection.material module<a class="headerlink" href="#module-anysection.material" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="anysection.material.Concrete_ConfinedKappos">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">anysection.material.</span></span><span class="sig-name descname"><span class="pre">Concrete_ConfinedKappos</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eco</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rw</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fyw</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">HoopType</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/anysection/material.html#Concrete_ConfinedKappos"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#anysection.material.Concrete_ConfinedKappos" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#anysection.material.Material" title="anysection.material.Material"><code class="xref py py-class docutils literal notranslate"><span class="pre">Material</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="anysection.material.Concrete_ConfinedKappos.is_failure">
+<span class="sig-name descname"><span class="pre">is_failure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">strain</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/anysection/material.html#Concrete_ConfinedKappos.is_failure"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#anysection.material.Concrete_ConfinedKappos.is_failure" title="Link to this definition"></a></dt>
+<dd><p>Determine if the material has failed at the given strain.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>strain</strong> (<em>float</em>) – Input strain.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if failed, False otherwise.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="anysection.material.Concrete_ConfinedKappos.stress">
+<span class="sig-name descname"><span class="pre">stress</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">strain</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/anysection/material.html#Concrete_ConfinedKappos.stress"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#anysection.material.Concrete_ConfinedKappos.stress" title="Link to this definition"></a></dt>
+<dd><p>Calculate stress based on strain.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>strain</strong> (<em>float</em>) – Input strain.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Computed stress.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="anysection.material.Concrete_ConfinedSpoelstra">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">anysection.material.</span></span><span class="sig-name descname"><span class="pre">Concrete_ConfinedSpoelstra</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">D</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fco</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fju</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Ej</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eco</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/anysection/material.html#Concrete_ConfinedSpoelstra"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#anysection.material.Concrete_ConfinedSpoelstra" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#anysection.material.Material" title="anysection.material.Material"><code class="xref py py-class docutils literal notranslate"><span class="pre">Material</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="anysection.material.Concrete_ConfinedSpoelstra.is_failure">
+<span class="sig-name descname"><span class="pre">is_failure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">strain</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/anysection/material.html#Concrete_ConfinedSpoelstra.is_failure"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#anysection.material.Concrete_ConfinedSpoelstra.is_failure" title="Link to this definition"></a></dt>
+<dd><p>Determine if the material has failed at the given strain.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>strain</strong> (<em>float</em>) – Input strain.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if failed, False otherwise.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="anysection.material.Concrete_ConfinedSpoelstra.stress">
+<span class="sig-name descname"><span class="pre">stress</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">strain</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/anysection/material.html#Concrete_ConfinedSpoelstra.stress"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#anysection.material.Concrete_ConfinedSpoelstra.stress" title="Link to this definition"></a></dt>
+<dd><p>Calculate stress based on strain.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>strain</strong> (<em>float</em>) – Input strain.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Computed stress.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="anysection.material.Concrete_MC90General">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">anysection.material.</span></span><span class="sig-name descname"><span class="pre">Concrete_MC90General</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fcm</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ecu</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ft</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">etu</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/anysection/material.html#Concrete_MC90General"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#anysection.material.Concrete_MC90General" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#anysection.material.Material" title="anysection.material.Material"><code class="xref py py-class docutils literal notranslate"><span class="pre">Material</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="anysection.material.Concrete_MC90General.is_failure">
+<span class="sig-name descname"><span class="pre">is_failure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">strain</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/anysection/material.html#Concrete_MC90General.is_failure"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#anysection.material.Concrete_MC90General.is_failure" title="Link to this definition"></a></dt>
+<dd><p>Determine if the material has failed at the given strain.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>strain</strong> (<em>float</em>) – Input strain.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if failed, False otherwise.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="anysection.material.Concrete_MC90General.stress">
+<span class="sig-name descname"><span class="pre">stress</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">strain</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/anysection/material.html#Concrete_MC90General.stress"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#anysection.material.Concrete_MC90General.stress" title="Link to this definition"></a></dt>
+<dd><p>Calculate stress based on strain.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>strain</strong> (<em>float</em>) – Input strain.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Computed stress.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="anysection.material.Concrete_NonlinearEC2">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">anysection.material.</span></span><span class="sig-name descname"><span class="pre">Concrete_NonlinearEC2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fcm</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ec1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ecu1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/anysection/material.html#Concrete_NonlinearEC2"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#anysection.material.Concrete_NonlinearEC2" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#anysection.material.Material" title="anysection.material.Material"><code class="xref py py-class docutils literal notranslate"><span class="pre">Material</span></code></a></p>
+<p>EC2 nonlinear concrete model (parabolic up to ec1, then constant).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fcm</strong> (<em>float</em>) – Mean compressive strength [Pa].</p></li>
+<li><p><strong>ec1</strong> (<em>float</em>) – Strain at peak stress.</p></li>
+<li><p><strong>ecu1</strong> (<em>float</em>) – Ultimate strain.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="anysection.material.Concrete_NonlinearEC2.is_failure">
+<span class="sig-name descname"><span class="pre">is_failure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">strain</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/anysection/material.html#Concrete_NonlinearEC2.is_failure"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#anysection.material.Concrete_NonlinearEC2.is_failure" title="Link to this definition"></a></dt>
+<dd><p>Determine if the material has failed at the given strain.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>strain</strong> (<em>float</em>) – Input strain.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if failed, False otherwise.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="anysection.material.Concrete_NonlinearEC2.stress">
+<span class="sig-name descname"><span class="pre">stress</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">strain</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/anysection/material.html#Concrete_NonlinearEC2.stress"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#anysection.material.Concrete_NonlinearEC2.stress" title="Link to this definition"></a></dt>
+<dd><p>Calculate stress based on strain.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>strain</strong> (<em>float</em>) – Input strain.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Computed stress.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="anysection.material.Concrete_ParabolicLinearEC2">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">anysection.material.</span></span><span class="sig-name descname"><span class="pre">Concrete_ParabolicLinearEC2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fck</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">acc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ec2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ecu2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/anysection/material.html#Concrete_ParabolicLinearEC2"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#anysection.material.Concrete_ParabolicLinearEC2" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#anysection.material.Material" title="anysection.material.Material"><code class="xref py py-class docutils literal notranslate"><span class="pre">Material</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="anysection.material.Concrete_ParabolicLinearEC2.is_failure">
+<span class="sig-name descname"><span class="pre">is_failure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">strain</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/anysection/material.html#Concrete_ParabolicLinearEC2.is_failure"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#anysection.material.Concrete_ParabolicLinearEC2.is_failure" title="Link to this definition"></a></dt>
+<dd><p>Determine if the material has failed at the given strain.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>strain</strong> (<em>float</em>) – Input strain.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if failed, False otherwise.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="anysection.material.Concrete_ParabolicLinearEC2.stress">
+<span class="sig-name descname"><span class="pre">stress</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">strain</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/anysection/material.html#Concrete_ParabolicLinearEC2.stress"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#anysection.material.Concrete_ParabolicLinearEC2.stress" title="Link to this definition"></a></dt>
+<dd><p>Calculate stress based on strain.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>strain</strong> (<em>float</em>) – Input strain.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Computed stress.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="anysection.material.Concrete_ParabolicLinearFRC">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">anysection.material.</span></span><span class="sig-name descname"><span class="pre">Concrete_ParabolicLinearFRC</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Ec</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eco</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ecu</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ft</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">e2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">e3</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/anysection/material.html#Concrete_ParabolicLinearFRC"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#anysection.material.Concrete_ParabolicLinearFRC" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#anysection.material.Material" title="anysection.material.Material"><code class="xref py py-class docutils literal notranslate"><span class="pre">Material</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="anysection.material.Concrete_ParabolicLinearFRC.is_failure">
+<span class="sig-name descname"><span class="pre">is_failure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">strain</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/anysection/material.html#Concrete_ParabolicLinearFRC.is_failure"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#anysection.material.Concrete_ParabolicLinearFRC.is_failure" title="Link to this definition"></a></dt>
+<dd><p>Determine if the material has failed at the given strain.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>strain</strong> (<em>float</em>) – Input strain.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if failed, False otherwise.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="anysection.material.Concrete_ParabolicLinearFRC.stress">
+<span class="sig-name descname"><span class="pre">stress</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">strain</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/anysection/material.html#Concrete_ParabolicLinearFRC.stress"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#anysection.material.Concrete_ParabolicLinearFRC.stress" title="Link to this definition"></a></dt>
+<dd><p>Calculate stress based on strain.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>strain</strong> (<em>float</em>) – Input strain.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Computed stress.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="anysection.material.Concrete_ParabolicLinearGeneral">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">anysection.material.</span></span><span class="sig-name descname"><span class="pre">Concrete_ParabolicLinearGeneral</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Ec</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eco</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ecu</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">slope</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ft</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">etu</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/anysection/material.html#Concrete_ParabolicLinearGeneral"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#anysection.material.Concrete_ParabolicLinearGeneral" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#anysection.material.Material" title="anysection.material.Material"><code class="xref py py-class docutils literal notranslate"><span class="pre">Material</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="anysection.material.Concrete_ParabolicLinearGeneral.is_failure">
+<span class="sig-name descname"><span class="pre">is_failure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">strain</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/anysection/material.html#Concrete_ParabolicLinearGeneral.is_failure"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#anysection.material.Concrete_ParabolicLinearGeneral.is_failure" title="Link to this definition"></a></dt>
+<dd><p>Determine if the material has failed at the given strain.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>strain</strong> (<em>float</em>) – Input strain.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if failed, False otherwise.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="anysection.material.Concrete_ParabolicLinearGeneral.stress">
+<span class="sig-name descname"><span class="pre">stress</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">strain</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/anysection/material.html#Concrete_ParabolicLinearGeneral.stress"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#anysection.material.Concrete_ParabolicLinearGeneral.stress" title="Link to this definition"></a></dt>
+<dd><p>Calculate stress based on strain.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>strain</strong> (<em>float</em>) – Input strain.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Computed stress.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="anysection.material.Concrete_Popovics">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">anysection.material.</span></span><span class="sig-name descname"><span class="pre">Concrete_Popovics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Eco</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ec</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ecu</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/anysection/material.html#Concrete_Popovics"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#anysection.material.Concrete_Popovics" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#anysection.material.Material" title="anysection.material.Material"><code class="xref py py-class docutils literal notranslate"><span class="pre">Material</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="anysection.material.Concrete_Popovics.is_failure">
+<span class="sig-name descname"><span class="pre">is_failure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">strain</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/anysection/material.html#Concrete_Popovics.is_failure"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#anysection.material.Concrete_Popovics.is_failure" title="Link to this definition"></a></dt>
+<dd><p>Determine if the material has failed at the given strain.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>strain</strong> (<em>float</em>) – Input strain.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if failed, False otherwise.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="anysection.material.Concrete_Popovics.stress">
+<span class="sig-name descname"><span class="pre">stress</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">strain</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/anysection/material.html#Concrete_Popovics.stress"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#anysection.material.Concrete_Popovics.stress" title="Link to this definition"></a></dt>
+<dd><p>Calculate stress based on strain.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>strain</strong> (<em>float</em>) – Input strain.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Computed stress.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="anysection.material.FRP_Linear">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">anysection.material.</span></span><span class="sig-name descname"><span class="pre">FRP_Linear</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Es</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">euk</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/anysection/material.html#FRP_Linear"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#anysection.material.FRP_Linear" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#anysection.material.Material" title="anysection.material.Material"><code class="xref py py-class docutils literal notranslate"><span class="pre">Material</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="anysection.material.FRP_Linear.is_failure">
+<span class="sig-name descname"><span class="pre">is_failure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">strain</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/anysection/material.html#FRP_Linear.is_failure"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#anysection.material.FRP_Linear.is_failure" title="Link to this definition"></a></dt>
+<dd><p>Determine if the material has failed at the given strain.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>strain</strong> (<em>float</em>) – Input strain.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if failed, False otherwise.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="anysection.material.FRP_Linear.stress">
+<span class="sig-name descname"><span class="pre">stress</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">strain</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/anysection/material.html#FRP_Linear.stress"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#anysection.material.FRP_Linear.stress" title="Link to this definition"></a></dt>
+<dd><p>Calculate stress based on strain.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>strain</strong> (<em>float</em>) – Input strain.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Computed stress.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="anysection.material.Material">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">anysection.material.</span></span><span class="sig-name descname"><span class="pre">Material</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/anysection/material.html#Material"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#anysection.material.Material" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Abstract base class for all material models.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="anysection.material.Material.is_failure">
+<span class="sig-name descname"><span class="pre">is_failure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">strain</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/anysection/material.html#Material.is_failure"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#anysection.material.Material.is_failure" title="Link to this definition"></a></dt>
+<dd><p>Determine if the material has failed at the given strain.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>strain</strong> (<em>float</em>) – Input strain.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if failed, False otherwise.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="anysection.material.Material.stress">
+<span class="sig-name descname"><span class="pre">stress</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">strain</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/anysection/material.html#Material.stress"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#anysection.material.Material.stress" title="Link to this definition"></a></dt>
+<dd><p>Calculate stress based on strain.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>strain</strong> (<em>float</em>) – Input strain.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Computed stress.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="anysection.material.MaterialFactory">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">anysection.material.</span></span><span class="sig-name descname"><span class="pre">MaterialFactory</span></span><a class="reference internal" href="_modules/anysection/material.html#MaterialFactory"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#anysection.material.MaterialFactory" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="anysection.material.MaterialFactory.create_material">
+<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_material</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">material_type</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/anysection/material.html#MaterialFactory.create_material"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#anysection.material.MaterialFactory.create_material" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="anysection.material.ModelType">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">anysection.material.</span></span><span class="sig-name descname"><span class="pre">ModelType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">values</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/anysection/material.html#ModelType"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#anysection.material.ModelType" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Enum</span></code></p>
+<p>Enumeration of available material model types for concrete, steel, and FRP.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="anysection.material.ModelType.CONCRETE_CONFINED_KAPPOS">
+<span class="sig-name descname"><span class="pre">CONCRETE_CONFINED_KAPPOS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Concrete_ConfinedKappos'</span></em><a class="headerlink" href="#anysection.material.ModelType.CONCRETE_CONFINED_KAPPOS" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="anysection.material.ModelType.CONCRETE_CONFINED_SPOELSTRA">
+<span class="sig-name descname"><span class="pre">CONCRETE_CONFINED_SPOELSTRA</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Concrete_ConfinedSpoelstra'</span></em><a class="headerlink" href="#anysection.material.ModelType.CONCRETE_CONFINED_SPOELSTRA" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="anysection.material.ModelType.CONCRETE_MC90_GENERAL">
+<span class="sig-name descname"><span class="pre">CONCRETE_MC90_GENERAL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Concrete_MC90General'</span></em><a class="headerlink" href="#anysection.material.ModelType.CONCRETE_MC90_GENERAL" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="anysection.material.ModelType.CONCRETE_Nonlinear_EC2">
+<span class="sig-name descname"><span class="pre">CONCRETE_Nonlinear_EC2</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Concrete_NonlinearEC2'</span></em><a class="headerlink" href="#anysection.material.ModelType.CONCRETE_Nonlinear_EC2" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="anysection.material.ModelType.CONCRETE_PARABOLIC_LINEAR_EC2">
+<span class="sig-name descname"><span class="pre">CONCRETE_PARABOLIC_LINEAR_EC2</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Concrete_ParabolicLinearEC2'</span></em><a class="headerlink" href="#anysection.material.ModelType.CONCRETE_PARABOLIC_LINEAR_EC2" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="anysection.material.ModelType.CONCRETE_PARABOLIC_LINEAR_FRC">
+<span class="sig-name descname"><span class="pre">CONCRETE_PARABOLIC_LINEAR_FRC</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Concrete_ParabolicLinearFRC'</span></em><a class="headerlink" href="#anysection.material.ModelType.CONCRETE_PARABOLIC_LINEAR_FRC" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="anysection.material.ModelType.CONCRETE_PARABOLIC_LINEAR_GENERAL">
+<span class="sig-name descname"><span class="pre">CONCRETE_PARABOLIC_LINEAR_GENERAL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Concrete_ParabolicLinearGeneral'</span></em><a class="headerlink" href="#anysection.material.ModelType.CONCRETE_PARABOLIC_LINEAR_GENERAL" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="anysection.material.ModelType.CONCRETE_POPOVICS">
+<span class="sig-name descname"><span class="pre">CONCRETE_POPOVICS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Concrete_Popovics'</span></em><a class="headerlink" href="#anysection.material.ModelType.CONCRETE_POPOVICS" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="anysection.material.ModelType.FRP_LINEAR">
+<span class="sig-name descname"><span class="pre">FRP_LINEAR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'FRP_Linear'</span></em><a class="headerlink" href="#anysection.material.ModelType.FRP_LINEAR" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="anysection.material.ModelType.STEEL_BILINEAR">
+<span class="sig-name descname"><span class="pre">STEEL_BILINEAR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Steel_Bilinear'</span></em><a class="headerlink" href="#anysection.material.ModelType.STEEL_BILINEAR" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="anysection.material.ModelType.STEEL_PARK_SAMPSON">
+<span class="sig-name descname"><span class="pre">STEEL_PARK_SAMPSON</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Steel_ParkSampson'</span></em><a class="headerlink" href="#anysection.material.ModelType.STEEL_PARK_SAMPSON" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="anysection.material.Steel_Bilinear">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">anysection.material.</span></span><span class="sig-name descname"><span class="pre">Steel_Bilinear</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Es</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fy</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">euk</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/anysection/material.html#Steel_Bilinear"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#anysection.material.Steel_Bilinear" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#anysection.material.Material" title="anysection.material.Material"><code class="xref py py-class docutils literal notranslate"><span class="pre">Material</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="anysection.material.Steel_Bilinear.is_failure">
+<span class="sig-name descname"><span class="pre">is_failure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">strain</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/anysection/material.html#Steel_Bilinear.is_failure"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#anysection.material.Steel_Bilinear.is_failure" title="Link to this definition"></a></dt>
+<dd><p>Determine if the material has failed at the given strain.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>strain</strong> (<em>float</em>) – Input strain.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if failed, False otherwise.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="anysection.material.Steel_Bilinear.stress">
+<span class="sig-name descname"><span class="pre">stress</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">strain</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/anysection/material.html#Steel_Bilinear.stress"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#anysection.material.Steel_Bilinear.stress" title="Link to this definition"></a></dt>
+<dd><p>Calculate stress based on strain.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>strain</strong> (<em>float</em>) – Input strain.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Computed stress.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="anysection.material.Steel_ParkSampson">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">anysection.material.</span></span><span class="sig-name descname"><span class="pre">Steel_ParkSampson</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Es</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fy</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fu</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">esh</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">esu</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/anysection/material.html#Steel_ParkSampson"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#anysection.material.Steel_ParkSampson" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#anysection.material.Material" title="anysection.material.Material"><code class="xref py py-class docutils literal notranslate"><span class="pre">Material</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="anysection.material.Steel_ParkSampson.is_failure">
+<span class="sig-name descname"><span class="pre">is_failure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">strain</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/anysection/material.html#Steel_ParkSampson.is_failure"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#anysection.material.Steel_ParkSampson.is_failure" title="Link to this definition"></a></dt>
+<dd><p>Determine if the material has failed at the given strain.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>strain</strong> (<em>float</em>) – Input strain.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if failed, False otherwise.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="anysection.material.Steel_ParkSampson.stress">
+<span class="sig-name descname"><span class="pre">stress</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">strain</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/anysection/material.html#Steel_ParkSampson.stress"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#anysection.material.Steel_ParkSampson.stress" title="Link to this definition"></a></dt>
+<dd><p>Calculate stress based on strain.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>strain</strong> (<em>float</em>) – Input strain.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Computed stress.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-anysection.points">
+<span id="anysection-points-module"></span><h2>anysection.points module<a class="headerlink" href="#module-anysection.points" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="anysection.points.Point">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">anysection.points.</span></span><span class="sig-name descname"><span class="pre">Point</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/anysection/points.html#Point"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#anysection.points.Point" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class representing a point in 2D space.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="anysection.points.Point.distance_to">
+<span class="sig-name descname"><span class="pre">distance_to</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/anysection/points.html#Point.distance_to"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#anysection.points.Point.distance_to" title="Link to this definition"></a></dt>
+<dd><p>Calculate the Euclidean distance to another point.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="anysection.points.Point.translate">
+<span class="sig-name descname"><span class="pre">translate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dy</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/anysection/points.html#Point.translate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#anysection.points.Point.translate" title="Link to this definition"></a></dt>
+<dd><p>Translate the point by dx and dy.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-anysection.section">
+<span id="anysection-section-module"></span><h2>anysection.section module<a class="headerlink" href="#module-anysection.section" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="anysection.section.Section">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">anysection.section.</span></span><span class="sig-name descname"><span class="pre">Section</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/anysection/section.html#Section"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#anysection.section.Section" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class representing a structural section composed of fibers.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="anysection.section.Section.add_area">
+<span class="sig-name descname"><span class="pre">add_area</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">area_obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/anysection/section.html#Section.add_area"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#anysection.section.Section.add_area" title="Link to this definition"></a></dt>
+<dd><p>Add an area object (CompositeArea, Rectangle, Circle, etc.) to the section.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>area_obj</strong> (<a class="reference internal" href="#anysection.area.Area" title="anysection.area.Area"><em>Area</em></a>) – An area object that has an <cite>area()</cite> and <cite>centroid()</cite> method.</p></li>
+<li><p><strong>dx</strong> (<em>float</em>) – Shift in x-direction.</p></li>
+<li><p><strong>dy</strong> (<em>float</em>) – Shift in y-direction.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="anysection.section.Section.add_fiber">
+<span class="sig-name descname"><span class="pre">add_fiber</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">area</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">material</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/anysection/section.html#Section.add_fiber"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#anysection.section.Section.add_fiber" title="Link to this definition"></a></dt>
+<dd><p>Add a fiber to the section.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>area</strong> (<em>float</em>) – Area of the fiber.</p></li>
+<li><p><strong>x</strong> (<em>float</em>) – X-coordinate of the fiber centroid.</p></li>
+<li><p><strong>y</strong> (<em>float</em>) – Y-coordinate of the fiber centroid.</p></li>
+<li><p><strong>material</strong> (<a class="reference internal" href="#anysection.material.Material" title="anysection.material.Material"><em>Material</em></a>) – Material object (Concrete, Steel, etc.)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="anysection.section.Section.centroid">
+<span class="sig-name descname"><span class="pre">centroid</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/anysection/section.html#Section.centroid"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#anysection.section.Section.centroid" title="Link to this definition"></a></dt>
+<dd><p>Calculate the centroid of the section.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="anysection.section.Section.moment_of_inertia">
+<span class="sig-name descname"><span class="pre">moment_of_inertia</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/anysection/section.html#Section.moment_of_inertia"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#anysection.section.Section.moment_of_inertia" title="Link to this definition"></a></dt>
+<dd><p>Calculate the moment of inertia of the section.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="anysection.section.Section.total_area">
+<span class="sig-name descname"><span class="pre">total_area</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/anysection/section.html#Section.total_area"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#anysection.section.Section.total_area" title="Link to this definition"></a></dt>
+<dd><p>Calculate the total area of the section.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-anysection.solver">
+<span id="anysection-solver-module"></span><h2>anysection.solver module<a class="headerlink" href="#module-anysection.solver" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="anysection.solver.SectionSolver">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">anysection.solver.</span></span><span class="sig-name descname"><span class="pre">SectionSolver</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">section</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/anysection/solver.html#SectionSolver"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#anysection.solver.SectionSolver" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class to perform section analysis to determine axial forces, moments,
+and moment-curvature relationships using iterative solvers.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="anysection.solver.SectionSolver.calculate_axial_force">
+<span class="sig-name descname"><span class="pre">calculate_axial_force</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">neutral_axis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">curvature</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/anysection/solver.html#SectionSolver.calculate_axial_force"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#anysection.solver.SectionSolver.calculate_axial_force" title="Link to this definition"></a></dt>
+<dd><p>Calculate the axial force in the section for a given neutral axis position and curvature.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>neutral_axis</strong> (<em>float</em>) – Position of the neutral axis.</p></li>
+<li><p><strong>curvature</strong> (<em>float</em>) – Curvature applied to the section.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Total axial force.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="anysection.solver.SectionSolver.calculate_moment_capacity">
+<span class="sig-name descname"><span class="pre">calculate_moment_capacity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">curvature</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">neutral_axis</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/anysection/solver.html#SectionSolver.calculate_moment_capacity"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#anysection.solver.SectionSolver.calculate_moment_capacity" title="Link to this definition"></a></dt>
+<dd><p>Calculate bending moment for a given curvature and neutral axis.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>curvature</strong> (<em>float</em>) – Section curvature.</p></li>
+<li><p><strong>neutral_axis</strong> (<em>float</em>) – Position of the neutral axis.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Resulting moment.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="anysection.solver.SectionSolver.find_neutral_axis">
+<span class="sig-name descname"><span class="pre">find_neutral_axis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target_axial_force</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">curvature</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tolerance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-06</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_iter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/anysection/solver.html#SectionSolver.find_neutral_axis"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#anysection.solver.SectionSolver.find_neutral_axis" title="Link to this definition"></a></dt>
+<dd><p>Find the neutral axis depth that satisfies the target axial force.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>target_axial_force</strong> (<em>float</em>) – Applied axial force.</p></li>
+<li><p><strong>curvature</strong> (<em>float</em>) – Section curvature.</p></li>
+<li><p><strong>tolerance</strong> (<em>float</em>) – Convergence tolerance.</p></li>
+<li><p><strong>max_iter</strong> (<em>int</em>) – Max iterations.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Neutral axis position.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="anysection.solver.SectionSolver.interaction_curve">
+<span class="sig-name descname"><span class="pre">interaction_curve</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">neutral_axis_range</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/anysection/solver.html#SectionSolver.interaction_curve"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#anysection.solver.SectionSolver.interaction_curve" title="Link to this definition"></a></dt>
+<dd><p>Generate the interaction curve (axial force vs. bending moment).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>neutral_axis_range</strong> (<em>tuple</em>) – (min, max) range for the neutral axis.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>List of (axial_force, bending_moment) tuples.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="anysection.solver.SectionSolver.moment_curvature_analysis">
+<span class="sig-name descname"><span class="pre">moment_curvature_analysis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">curvature_range</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axial_force</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/anysection/solver.html#SectionSolver.moment_curvature_analysis"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#anysection.solver.SectionSolver.moment_curvature_analysis" title="Link to this definition"></a></dt>
+<dd><p>Perform moment-curvature analysis for a specified axial force.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>curvature_range</strong> (<em>iterable</em>) – List or array of curvature values.</p></li>
+<li><p><strong>axial_force</strong> (<em>float</em>) – Applied axial force (positive = compression).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>List of (curvature, moment) tuples.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-anysection">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-anysection" title="Link to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="modules.html" class="btn btn-neutral float-left" title="anysection" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="anysection.utils.html" class="btn btn-neutral float-right" title="anysection.utils package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Konstantinos Mixios.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
